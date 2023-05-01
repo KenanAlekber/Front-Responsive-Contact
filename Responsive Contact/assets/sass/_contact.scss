@@ -1,0 +1,121 @@
+@use './sass/utils/variable' as variable;
+@import './sass/utils/mixin';
+
+body {
+    background-color: rgb(190, 231, 238);
+    padding: 5% 9% 0% 11%;
+}
+
+i {
+    font-size: 25px;
+    margin-top: 10%;
+    color: variable.$iconsColor;
+}
+
+p,
+span {
+    color: variable.$grayColor;
+    margin: 0;
+    font-size: 17px;
+}
+
+
+#all-messages {
+    padding: 3% 2%;
+    background-color: variable.$whiteColor;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .container {
+        display: flex;
+        margin-top: 3%;
+        margin-left: 7%;
+
+        .contact {
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            b {
+                font-size: 25px;
+            }
+
+        }
+
+        .content {
+            margin-left: 3%;
+            border-left: 4px solid variable.$grayColor;
+            padding-left: 8%;
+            font-size: 20px;
+
+            .text {
+                h1 {
+                    margin-bottom: 1%;
+                    color: variable.$iconsColor;
+                }
+
+                span {
+                    font-size: 20px;
+                    color: black;
+                }
+            }
+
+            .about {
+                .name input {
+                    @include input;
+                }
+
+                .email input {
+                    @include input;
+                }
+
+                .message textarea {
+                    @include input;
+                    height: 100px;
+                }
+
+                button {
+                    margin-top: 1%;
+                    padding: 1% 2%;
+                    background-color: variable.$iconsColor;
+                    color: variable.$whiteColor;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    p {
+        font-size: 20px;
+        margin-left: 8%;
+        margin-top: 2%;
+    }
+}
+
+@media (max-width:520px) {
+    body {
+        width: 100%;
+
+        .container {
+            flex-direction: column !important;
+        }
+
+        .content {
+            border-top: 4px solid variable.$grayColor !important;
+            border-left: 0 !important;
+            margin: 0 !important;
+            margin-top: 20px !important;
+            padding: 0 !important;
+
+            button {
+                width: 100% !important;
+            }
+        }
+    }
+}
